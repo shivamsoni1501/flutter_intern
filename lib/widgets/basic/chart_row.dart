@@ -22,7 +22,8 @@ class ChartRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      // height: 60,
+      margin: EdgeInsets.only(top: 20),
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Row(
         children: [
@@ -33,12 +34,10 @@ class ChartRow extends StatelessWidget {
                   Theme.of(context).textTheme.headline3?.copyWith(color: color),
             ),
           ),
-          Expanded(
-            child: Text(
-              t2,
-              style: Theme.of(context).textTheme.headline3,
-              textAlign: TextAlign.center,
-            ),
+          Text(
+            t2,
+            style: Theme.of(context).textTheme.headline3,
+            textAlign: TextAlign.center,
           ),
           Expanded(
               child: (type == TypeOptions.sell)

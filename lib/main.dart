@@ -12,27 +12,24 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Intern',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'IBMPlex',
         textTheme: Theme.of(context).textTheme.copyWith(
               headline1: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 22,
               ),
               headline2: TextStyle(
-                color: Color(0xffC2C2C2),
-                fontWeight: FontWeight.bold,
-                // fontWeight: FontWeight.bold,
-                fontSize: 18,
+                color: Color(0xFFDCDCDC),
+                fontSize: 16,
               ),
               headline3: TextStyle(
-                color: Color(0xffC2C2C2),
-                // fontWeight: FontWeight.b,
-                fontSize: 15,
+                color: Color(0xFFDCDCDC),
+                fontSize: 14,
               ),
               headline4: TextStyle(
-                color: Colors.grey,
-                // fontWeight: FontWeight.b,
-                fontSize: 12,
+                color: Color(0xFF9F9F9F),
+                fontSize: 11,
               ),
             ),
       ),

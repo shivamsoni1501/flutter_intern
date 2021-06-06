@@ -11,12 +11,12 @@ class ArrowC extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Positioned(
-          top: 2,
-          left: -14,
+          top: -5,
+          left: -20,
           child: Icon(
             Icons.arrow_left,
             color: color,
-            // size: 10,
+            size: 40,
           ),
         ),
         ClipRRect(
@@ -26,10 +26,6 @@ class ArrowC extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
             child: Text(
               text,
-
-              // style: Theme.of(context).textTheme.headline3?.copyWith(
-              //       color: Colors.black,
-              //     ),
             ),
           ),
         ),

@@ -11,7 +11,8 @@ class CustomButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(5),
         child: Container(
-          padding: EdgeInsets.all(10),
+          // alignment: Alignment(0, .3),
+          padding: EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           color: color,
           child: Text(
             text,

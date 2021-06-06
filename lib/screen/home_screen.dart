@@ -9,25 +9,27 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(
-          Icons.keyboard_arrow_left,
-          size: 25,
-        ),
-        title: Text(
-          'USD / INR',
-          style: Theme.of(context).textTheme.headline1,
-        ),
-        elevation: 0,
-        backgroundColor: Colors.black,
-      ),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            BackgroundText('Technical Indicators', true),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Icon(
+                  Icons.keyboard_arrow_left,
+                  color: Colors.white,
+                ),
+                SizedBox(width: 20),
+                Text(
+                  'USD / INR',
+                  style: Theme.of(context).textTheme.headline1,
+                )
+              ],
+            ),
+            BackgroundText('Technical Indicators', true, Color(0xFF9F9F9F)),
             Summary(),
             MovingAve(),
             Oscillators(),
