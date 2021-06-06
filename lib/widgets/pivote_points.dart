@@ -13,7 +13,7 @@ class PivotePoints extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headline3
-                ?.copyWith(color: Colors.grey),
+                ?.copyWith(color: Color(0xFF9F9F9F)),
           ),
           Text(
             t2,

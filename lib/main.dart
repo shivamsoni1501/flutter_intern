@@ -17,15 +17,15 @@ class MyApp extends StatelessWidget {
               headline1: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: 22,
+                fontSize: 20,
               ),
               headline2: TextStyle(
                 color: Color(0xFFDCDCDC),
-                fontSize: 16,
+                fontSize: 15,
               ),
               headline3: TextStyle(
                 color: Color(0xFFDCDCDC),
-                fontSize: 14,
+                fontSize: 13,
               ),
               headline4: TextStyle(
                 color: Color(0xFF9F9F9F),

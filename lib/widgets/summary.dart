@@ -7,7 +7,7 @@ class Summary extends StatelessWidget {
   textBox(context, text, color) {
     return Container(
       alignment: Alignment(0, .3),
-      width: 50,
+      width: 60,
       height: 30,
       margin: EdgeInsets.all(3),
       decoration: BoxDecoration(

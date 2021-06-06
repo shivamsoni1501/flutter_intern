@@ -29,6 +29,7 @@ class HomeScreen extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(height: 10),
             BackgroundText('Technical Indicators', true, Color(0xFF9F9F9F)),
             Summary(),
             MovingAve(),

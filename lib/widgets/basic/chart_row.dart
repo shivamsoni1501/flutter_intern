@@ -41,7 +41,7 @@ class ChartRow extends StatelessWidget {
           ),
           Expanded(
               child: (type == TypeOptions.sell)
-                  ? textW(context, 'SELL', Colors.red)
+                  ? textW(context, 'SELL', Color(0xFFB94763))
                   : (type == TypeOptions.buy)
                       ? textW(context, 'BUY', Colors.blue)
                       : (type == TypeOptions.neutral)

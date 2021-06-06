@@ -8,27 +8,22 @@ class RowW3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Expanded(
-          child: Text(
-            t1,
-            textAlign: TextAlign.center,
-            style: theme,
-          ),
+        Text(
+          t1,
+          textAlign: TextAlign.center,
+          style: theme,
         ),
-        Expanded(
-          child: Text(
-            t2,
-            style: theme,
-            textAlign: TextAlign.center,
-          ),
+        Text(
+          t2,
+          style: theme,
+          textAlign: TextAlign.center,
         ),
-        Expanded(
-          child: Text(
-            t3,
-            style: theme,
-            textAlign: TextAlign.center,
-          ),
+        Text(
+          t3,
+          style: theme,
+          textAlign: TextAlign.center,
         ),
       ],
     );
