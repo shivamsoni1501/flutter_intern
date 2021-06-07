@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intern/model/data.dart';
+import 'package:provider/provider.dart';
 
 import 'basic/arrow_container.dart';
 import 'basic/indicator.dart';
 
 class Summary extends StatelessWidget {
-  textBox(context, text, color) {
+  Widget textBox(context, text, color) {
     return Container(
       alignment: Alignment(0, .3),
-      width: 60,
-      height: 30,
-      margin: EdgeInsets.all(3),
+      width: 55,
+      height: 31,
+      margin: EdgeInsets.only(top: 7),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: color)),
@@ -21,8 +23,43 @@ class Summary extends StatelessWidget {
     );
   }
 
+  static const Map temp = {
+    'Strong Buy': -.9,
+    'Buy': -.45,
+    'Neutral': 0,
+    'Sell': .45,
+    'Strong Sell': .9
+  };
+
+  static const Map<String, String> tempString = {
+    '1 MIN': '1min',
+    '5 MIN': '5min',
+    '15 MIN': '15min',
+    '30 MIN': '30min',
+    '1 HR': '1hour',
+    '5 HR': '5hour',
+    '1 DAY': 'daily',
+    '1 WK': 'weekly',
+    '1 MON': 'monthly'
+  };
+
+  static const List<String> listString = [
+    '1 MIN',
+    '5 MIN',
+    '15 MIN',
+    '30 MIN',
+    '1 HR',
+    '5 HR',
+    '1 DAY',
+    '1 WK',
+    '1 MON'
+  ];
+
   @override
   Widget build(BuildContext context) {
+    var pData = Provider.of<TechnicalIP>(context);
+    List<String> keys = pData.periodList;
+    print(keys);
     return Column(
       children: [
         Padding(
@@ -38,21 +75,26 @@ class Summary extends StatelessWidget {
             SizedBox(width: 30),
             Indicator(300),
             SizedBox(width: 15),
-            ArrowC(Color(0xFFFCBB46), 'NEUTRAL'),
+            AnimatedContainer(
+              duration: Duration(milliseconds: 500),
+              height: 300,
+              alignment: Alignment(0, temp[pData.summaryData]),
+              child: ArrowC(),
+            ),
             Spacer(),
             Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
-                textBox(context, '1 MIN', Color(0xFFDCDCDC)),
-                textBox(context, '5 MIN', Color(0xFF424242)),
-                textBox(context, '15 MIN', Color(0xFF424242)),
-                textBox(context, '30 MIN', Color(0xFF424242)),
-                textBox(context, '1 HR', Color(0xFF424242)),
-                textBox(context, '5 HR', Color(0xFF424242)),
-                textBox(context, '1 DAY', Color(0xFF424242)),
-                textBox(context, '1 WK', Color(0xFF424242)),
-                textBox(context, '1 MON', Color(0xFF424242)),
-              ],
+              children: listString
+                  .map((e) => GestureDetector(
+                        onTap: () => pData.period = tempString[e]!,
+                        child: textBox(
+                            context,
+                            e,
+                            (tempString[e]! == pData.period)
+                                ? Colors.white.withOpacity(.87)
+                                : Colors.white.withOpacity(.60)),
+                      ))
+                  .toList(),
             ),
             SizedBox(height: 10),
           ],

@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 
-enum TypeOptions {
-  sell,
-  buy,
-  neutral,
-  lessVolataile,
-}
-
 class ChartRow extends StatelessWidget {
   final String t1, t2;
   final Color color;
-  final TypeOptions type;
+  final String type;
   const ChartRow(this.t1, this.t2, this.color, this.type);
 
   Widget textW(context, text, color) {
@@ -40,13 +33,14 @@ class ChartRow extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           Expanded(
-              child: (type == TypeOptions.sell)
-                  ? textW(context, 'SELL', Color(0xFFB94763))
-                  : (type == TypeOptions.buy)
-                      ? textW(context, 'BUY', Colors.blue)
-                      : (type == TypeOptions.neutral)
-                          ? textW(context, 'NEUTRAL', Colors.amber)
-                          : textW(context, 'LESS VOLATAILE', Colors.grey)),
+              child: (type == 'Sell')
+                  ? textW(context, type.toUpperCase(), Color(0xFFFF2E50))
+                  : (type == 'Buy')
+                      ? textW(context, type.toUpperCase(), Color(0xFF007AFF))
+                      : (type == 'Neutral')
+                          ? textW(
+                              context, type.toUpperCase(), Color(0xFFFFB946))
+                          : textW(context, type.toUpperCase(), Colors.grey)),
         ],
       ),
     );

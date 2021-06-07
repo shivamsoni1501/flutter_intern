@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intern/screen/home_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'model/data.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,24 +19,28 @@ class MyApp extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.copyWith(
               headline1: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                fontSize: 21,
               ),
               headline2: TextStyle(
-                color: Color(0xFFDCDCDC),
-                fontSize: 15,
+                color: Color(0xFFFFFFFF).withOpacity(.87),
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
               ),
               headline3: TextStyle(
-                color: Color(0xFFDCDCDC),
-                fontSize: 13,
+                color: Color(0xFFFFFFFF).withOpacity(.87),
+                fontSize: 14,
               ),
               headline4: TextStyle(
-                color: Color(0xFF9F9F9F),
-                fontSize: 11,
+                color: Color(0xFFFFFFFF).withOpacity(.60),
+                fontSize: 12,
               ),
             ),
       ),
-      home: HomeScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => TechnicalIP(),
+        child: HomeScreen(),
+      ),
     );
   }
 }

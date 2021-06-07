@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_intern/model/constants.dart';
+import 'package:flutter_intern/model/data.dart';
+import 'package:provider/provider.dart';
 
 class ArrowC extends StatelessWidget {
-  final Color color;
-  final String text;
-  ArrowC(this.color, this.text);
+  // ArrowC(this.color);
 
   @override
   Widget build(BuildContext context) {
+    var pData = Provider.of<TechnicalIP>(context);
+    String cP = pData.period;
+    String cLable = pData.summaryData;
+    Color? color = stringKeys[cLable];
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -25,7 +31,7 @@ class ArrowC extends StatelessWidget {
             color: color,
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 6),
             child: Text(
-              text,
+              cLable,
             ),
           ),
         ),
